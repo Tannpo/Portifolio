@@ -1,0 +1,15 @@
+1)alter table usuario add column gorilas_roxos varchar
+
+2)Banco.deleta(1);
+
+3) public static void atualizar (Usuario usuario){
+        try{
+            Connection con = Banco.getConnection();
+            PreparedStatement ps = con.prepareStatement("update usuario set nome = ? where id = ?");
+            ps.setString(1, usuario.getNome());
+            ps.setInt(2, usuario.getId());
+            ps.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
